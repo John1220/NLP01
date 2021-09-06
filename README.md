@@ -1,3 +1,3 @@
 # nlp_classification
-- for chinese text
-- use tensorflow2 or pytorch
+- textcnn
+- bert use tensorflow2 or pytorch
