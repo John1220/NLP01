@@ -30,8 +30,8 @@ class Config(object):
         self.pad_size = 128
         self.learning_rate = 1e-5  # 学习率
         self.bert_path = os.path.join(BASE_DIR, 'bert_pretrain')
-        # self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)
-        self.tokenizer = BertTokenizer.from_pretrained("bert-base-chinese")
+        self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)
+        # self.tokenizer = BertTokenizer.from_pretrained("bert-base-chinese")
         self.hidden_size = 768
 
 
@@ -39,8 +39,8 @@ class Model(nn.Module):
 
     def __init__(self, config):
         super(Model, self).__init__()
-        # self.bert = BertModel.from_pretrained(config.bert_path)
-        self.bert = BertModel.from_pretrained("bert-base-chinese")
+        self.bert = BertModel.from_pretrained(config.bert_path)
+        # self.bert = BertModel.from_pretrained("bert-base-chinese")
         for param in self.bert.parameters():
             param.requires_grad = True
         self.fc = nn.Linear(config.hidden_size, config.num_classes)

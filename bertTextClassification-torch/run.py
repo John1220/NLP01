@@ -13,6 +13,7 @@ if __name__ == '__main__':
     config = x.Config(dataset)
     config.batch_size = 64
     config.pad_size = 160
+    config.bert_path = '../bertTextMultiLabelClassification/roberta'
 
     np.random.seed(1)
     torch.manual_seed(1)
